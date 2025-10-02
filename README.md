@@ -1,58 +1,109 @@
-# 📱 Calculator
+📱 Calculator
 
-## Overview
-This project is a **simple calculator** implemented using the [SimpleKit](https://github.com/CS-3035-2025/simplekit/tree/11f3333eb62f92db3158021609f5135b9bf9f758) framework.  
-The objective is to recreate the calculator design provided in the `img` folder by utilizing only the `wrapRow`, `fillRow`, and `centred` layout methods.  
-The use of `fixedLayout` is strictly prohibited.
+A desktop calculator app built using the SimpleKit UI framework. https://github.com/CS-3035-2025/simplekit
+This project replicates a standard calculator interface while enforcing input validation rules to prevent invalid operations.
 
----
+🚀 Features
 
-## Features
-- A **centred 300x450 panel** serves as the main calculator interface.
-- Functional buttons for:
-  - Numbers: `0–9`
-  - Operators: `+`, `-`, `*`, `/`
-  - Special keys: `=`, `<` (backspace)
-- Two display sections:
-  - **Results label** – Displays current input and results (default is `0`).
-  - **History label** – Displays the previous equation when `=` is pressed.
-- Fully implemented **event handlers**:
-  - Digits and operators append to the results label.
-  - `=` updates the history label, evaluates the current expression (using `eval()`), and displays the result.
-  - `<` removes the most recent character entered (backspace functionality).
+✅ Basic Arithmetic Operations
+- Addition (+)
+- Subtraction (-)
+- Multiplication (*)
+- Division (/)
 
----
+✅ Number Input
+- Buttons for 0–9
+- 0 button spans 3 columns for realistic calculator design
 
-## Input Restrictions
-The calculator enforces rules to prevent invalid expressions:
-- Prohibits multiple operators in succession.  
-  Example: ❌ `30 + + 35`
-- Disallows an operator at the beginning of an expression.  
-  Example: ❌ `* 30 - 35`
-- Prevents evaluation (`=`) if the expression ends with an operator.  
-  Example: ❌ `30 * 35 +`
-- Replaces the previous operator if a new operator is pressed immediately after another.
+✅ Special Buttons
+- = → evaluates the expression
+- < (backspace) → removes the last input
 
----
+✅ Display
+- Results label → current input or calculation result (default: 0)
+- History label → shows the last evaluated expression
 
-## Appearance Requirements
-- **Layouts:** Implemented exclusively with `wrapRow`, `fillRow`, and `centred`.
-- **Spacing:** The background panel contains no unused space; all space is occupied by widgets.
-- **Button sizing:**
-  - `0` → three times the width of a standard button.
-  - `<` → twice the width of a standard button.
-  - `=` → twice the height of a standard button.
-  - All other buttons are uniform squares.
-- **Labels:**
-  - Results label font size: ≥ 14pt.
-  - History label text color: grey.
-- Handling of text overflow in labels is **not implemented** (not required).
+✅ Input Safety
+- Prevents multiple operators in succession (30 + + 35 ❌)
+- Prevents operators at the start (* 30 - 35 ❌)
+- Prevents = if the last character is an operator (30 * 35 + ❌)
+- Replaces an operator if another is entered consecutively (30 + - 35 ✅ → 30 - 35)
+- Handles invalid results (NaN, Infinity) gracefully by resetting to 0
 
----
+🎨 Appearance & Layout
+The calculator is designed to match the provided mockup (img folder).
+- Main panel:
+  - 300 x 450 pixels
+  - White background, centred in window
+- Layouts used:
+  - wrapRow → row-based button grouping
+  - fillRow → for consistent row/column alignment
+  - centred → centres the main calculator in the app
+- Button sizing:
+  - All number/operator buttons are uniform squares
+  - 0 button spans width of three buttons
+  - < (back) button spans width of two buttons
+  - = button spans height of two buttons
+- Labels:
+  - Results label font: ≥ 20pt, black text, right-aligned
+  - History label font: 20pt, dark grey, right-aligned
 
-## Running the Project
-To run the calculator locally:
+⚙️ Technical Details
+- Framework: SimpleKit https://github.com/CS-3035-2025/simplekit (imperative mode)
+- Language: TypeScript / JavaScript
+- Evaluation: Uses JavaScript’s built-in eval() for arithmetic
+- Validation:
+  - Checks last character before appending new input
+  - Resets input correctly after calculation or error states
+  - Handles division by zero (result → Infinity, resets on next input)
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/<your-username>/<your-repo>.git
+📂 File Structure
+📦 calculator-project
+ ┣ 📂 simplekit/        # Framework source (imperative mode)
+ ┣ 📂 img/              # Calculator mockup images
+ ┣ 📜 main.ts           # Main calculator implementation
+ ┣ 📜 README.md         # Project documentation
+ ┗ 📜 package.json      # Project metadata
+
+🖥️ Demo Workflow
+1. Enter numbers/operators:
+  - Example: 53 + 7
+2. Press =:
+  - Result appears in results label
+  - Input expression moves to history label
+3. Press operator after evaluation:
+  - Continues from result (e.g., 60 = → then press + → 60 +)
+4. Press number after evaluation:
+  - Resets display (e.g., 60 = → then press 5 → 5)
+5. Press <:
+  - Deletes last input, or resets to 0 if empty
+
+🛠️ Installation & Running
+Clone the repository and run locally:
+
+# Clone repo
+git clone https://github.com/<your-username>/<your-repo>.git
+cd <your-repo>
+
+# Install dependencies (if any)
+git submodule init
+git submodule update
+npm install
+
+# Run project
+npm run dev
+
+🧪 Known Limitations
+- Text overflow in result/history labels is not yet handled.
+- Uses eval() for simplicity; safer expression parsing could be implemented.
+- No support for decimals or parentheses.
+
+🌟 Future Improvements
+- Add support for decimal numbers (.).
+- Implement keyboard input handling.
+- Improve evaluation safety by building a custom parser instead of eval().
+- Handle very large numbers with formatting (scientific notation).
+- Support clear (C/AC) functionality.
+
+👨‍💻 Author
+Developed as part of a CS course project using the SimpleKit framework.
