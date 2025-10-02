@@ -1,10 +1,9 @@
 📱 Calculator
 
-A desktop calculator app built using the SimpleKit UI framework. https://github.com/CS-3035-2025/simplekit
-This project replicates a standard calculator interface while enforcing input validation rules to prevent invalid operations.
+A desktop calculator app built using the SimpleKit UI framework https://github.com/CS-3035-2025/simplekit .
+  This project replicates a standard calculator interface while enforcing input validation rules to prevent invalid operations.
 
 🚀 Features
-
 ✅ Basic Arithmetic Operations
 - Addition (+)
 - Subtraction (-)
@@ -30,8 +29,8 @@ This project replicates a standard calculator interface while enforcing input va
 - Replaces an operator if another is entered consecutively (30 + - 35 ✅ → 30 - 35)
 - Handles invalid results (NaN, Infinity) gracefully by resetting to 0
 
-🎨 Appearance & Layout
-The calculator is designed to match the provided mockup (img folder).
+🎨 Appearance & Layout:
+  The calculator is designed to match the provided mockup (img folder).
 - Main panel:
   - 300 x 450 pixels
   - White background, centred in window
@@ -57,6 +56,7 @@ The calculator is designed to match the provided mockup (img folder).
   - Resets input correctly after calculation or error states
   - Handles division by zero (result → Infinity, resets on next input)
 
+``` bash
 📂 File Structure
 📦 calculator-project
  ┣ 📂 simplekit/        # Framework source (imperative mode)
@@ -64,7 +64,7 @@ The calculator is designed to match the provided mockup (img folder).
  ┣ 📜 main.ts           # Main calculator implementation
  ┣ 📜 README.md         # Project documentation
  ┗ 📜 package.json      # Project metadata
-
+```
 🖥️ Demo Workflow
 1. Enter numbers/operators:
   - Example: 53 + 7
@@ -80,7 +80,7 @@ The calculator is designed to match the provided mockup (img folder).
 
 🛠️ Installation & Running
 Clone the repository and run locally:
-
+``` bash
 # Clone repo
 git clone https://github.com/<your-username>/<your-repo>.git
 cd <your-repo>
@@ -92,7 +92,7 @@ npm install
 
 # Run project
 npm run dev
-
+```
 🧪 Known Limitations
 - Text overflow in result/history labels is not yet handled.
 - Uses eval() for simplicity; safer expression parsing could be implemented.
