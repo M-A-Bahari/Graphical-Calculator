@@ -1,35 +1,35 @@
-📱 Calculator
+### 📱 Calculator
 
 A desktop calculator app built using the SimpleKit UI framework https://github.com/CS-3035-2025/simplekit .
   This project replicates a standard calculator interface while enforcing input validation rules to prevent invalid operations.
 
-🚀 Features  
-✅ Basic Arithmetic Operations
+#### Features  
+##### ✅ Basic Arithmetic Operations
 - Addition (+)
 - Subtraction (-)
 - Multiplication (*)
 - Division (/)
 
-✅ Number Input
+##### ✅ Number Input
 - Buttons for 0–9
 - 0 button spans 3 columns for realistic calculator design
 
-✅ Special Buttons
+##### ✅ Special Buttons
 - = → evaluates the expression
 - < (backspace) → removes the last input
 
-✅ Display
+##### ✅ Display
 - Results label → current input or calculation result (default: 0)
 - History label → shows the last evaluated expression
 
-✅ Input Safety
+##### ✅ Input Safety
 - Prevents multiple operators in succession (30 + + 35 ❌)
 - Prevents operators at the start (* 30 - 35 ❌)
 - Prevents = if the last character is an operator (30 * 35 + ❌)
 - Replaces an operator if another is entered consecutively (30 + - 35 ✅ → 30 - 35)
 - Handles invalid results (NaN, Infinity) gracefully by resetting to 0
 
-🎨 Appearance & Layout  
+#### Appearance & Layout  
 The calculator is designed to match the provided mockup (img folder).
 - Main panel:
   - 300 x 450 pixels
@@ -47,7 +47,7 @@ The calculator is designed to match the provided mockup (img folder).
   - Results label font: ≥ 20pt, black text, right-aligned
   - History label font: 20pt, dark grey, right-aligned
 
-⚙️ Technical Details
+#### Technical Details
 - Framework: SimpleKit https://github.com/CS-3035-2025/simplekit (imperative mode)
 - Language: TypeScript / JavaScript
 - Evaluation: Uses JavaScript’s built-in eval() for arithmetic
@@ -65,7 +65,7 @@ The calculator is designed to match the provided mockup (img folder).
  ┣ 📜 README.md         # Project documentation
  ┗ 📜 package.json      # Project metadata
 ```
-🖥️ Demo Workflow
+#### Demo Workflow
 1. Enter numbers/operators:
   - Example: 53 + 7
 2. Press =:
@@ -78,7 +78,7 @@ The calculator is designed to match the provided mockup (img folder).
 5. Press <:
   - Deletes last input, or resets to 0 if empty
 
-🛠️ Installation & Running  
+#### Installation & Running  
 Clone the repository and run locally:
 ``` bash
 # Clone repo
@@ -93,17 +93,17 @@ npm install
 # Run project
 npm run dev
 ```
-🧪 Known Limitations
+#### Known Limitations
 - Text overflow in result/history labels is not yet handled.
 - Uses eval() for simplicity; safer expression parsing could be implemented.
 - No support for decimals or parentheses.
 
-🌟 Future Improvements
+#### Future Improvements
 - Add support for decimal numbers (.).
 - Implement keyboard input handling.
 - Improve evaluation safety by building a custom parser instead of eval().
 - Handle very large numbers with formatting (scientific notation).
 - Support clear (C/AC) functionality.
 
-👨‍💻 Author  
+#### Author  
 Developed as part of a CS course project using the SimpleKit framework.
