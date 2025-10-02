@@ -3,7 +3,7 @@
 A desktop calculator app built using the SimpleKit UI framework https://github.com/CS-3035-2025/simplekit .
   This project replicates a standard calculator interface while enforcing input validation rules to prevent invalid operations.
 
-🚀 Features
+🚀 Features  
 ✅ Basic Arithmetic Operations
 - Addition (+)
 - Subtraction (-)
@@ -29,8 +29,8 @@ A desktop calculator app built using the SimpleKit UI framework https://github.c
 - Replaces an operator if another is entered consecutively (30 + - 35 ✅ → 30 - 35)
 - Handles invalid results (NaN, Infinity) gracefully by resetting to 0
 
-🎨 Appearance & Layout:
-  The calculator is designed to match the provided mockup (img folder).
+🎨 Appearance & Layout  
+The calculator is designed to match the provided mockup (img folder).
 - Main panel:
   - 300 x 450 pixels
   - White background, centred in window
@@ -78,7 +78,7 @@ A desktop calculator app built using the SimpleKit UI framework https://github.c
 5. Press <:
   - Deletes last input, or resets to 0 if empty
 
-🛠️ Installation & Running
+🛠️ Installation & Running  
 Clone the repository and run locally:
 ``` bash
 # Clone repo
@@ -105,5 +105,5 @@ npm run dev
 - Handle very large numbers with formatting (scientific notation).
 - Support clear (C/AC) functionality.
 
-👨‍💻 Author
+👨‍💻 Author  
 Developed as part of a CS course project using the SimpleKit framework.
