@@ -106,6 +106,7 @@ const panel = new SKContainer({ width: panelWidth, height: panelHeight });
 panel.fill = "white";
 panel.layoutMethod = new Layout.WrapRowLayout;
 
+
 // The result Label
 const resultLabel = new SKLabel({
     text: "0",
@@ -197,12 +198,12 @@ const calculateContainer = new SKContainer({
 });
 calculateContainer.layoutMethod = new Layout.WrapRowLayout ();
 
-// Create empty space container for the upper portion as those pixels are already been ussed to show other signs.
-const emptySpace = new SKContainer({
-	width: 300,
-	height: 300
+// Contains < , *, /, 7, 8, 9, -, 4, 5, 6, +
+const TopRow = new SKContainer({ 
+	width: 300, 
+	height: 300 
 });
-emptySpace.layoutMethod = new Layout.FillRowLayout ();
+TopRow.layoutMethod = new Layout.WrapRowLayout();
 
 // bottomRow handles the botton portion for 1, 2, 3, =, 0.
 const bottomRow = new SKContainer({
@@ -333,20 +334,21 @@ nineButton.addEventListener("action", () => updateLabel(9));
 // Add child elements
 root.addChild(panel);
 root.addChild(calculateContainer);
+
 // panel.addChild();
-panel.addChild(resultLabel);
-panel.addChild(historyLabel);
-panel.addChild(backButton);
-panel.addChild(multiplicationButton);
-panel.addChild(divisionButton);
-panel.addChild(sevenButton);
-panel.addChild(eightButton);
-panel.addChild(nineButton);
-panel.addChild(subtractionButton);
-panel.addChild(fourButton);
-panel.addChild(fiveButton);
-panel.addChild(sixButton);
-panel.addChild(additionButton);
+TopRow.addChild(resultLabel);
+TopRow.addChild(historyLabel);
+TopRow.addChild(backButton);
+TopRow.addChild(multiplicationButton);
+TopRow.addChild(divisionButton);
+TopRow.addChild(sevenButton);
+TopRow.addChild(eightButton);
+TopRow.addChild(nineButton);
+TopRow.addChild(subtractionButton);
+TopRow.addChild(fourButton);
+TopRow.addChild(fiveButton);
+TopRow.addChild(sixButton);
+TopRow.addChild(additionButton);
 
 // calculateContainer.addChild()
 leftSide.addChild(oneButton);
@@ -355,7 +357,7 @@ leftSide.addChild(threeButton);
 leftSide.addChild(zeroButton);
 bottomRow.addChild(leftSide);
 bottomRow.addChild(calculateButton);
-calculateContainer.addChild(emptySpace);
+calculateContainer.addChild(TopRow);
 calculateContainer.addChild(bottomRow);
 
 setSKRoot(root);
